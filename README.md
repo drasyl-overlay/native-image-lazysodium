@@ -1,0 +1,1 @@
+GraalVM Native Image configuration for Lazysodium.
