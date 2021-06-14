@@ -1,6 +1,9 @@
+import com.goterl.lazysodium.LazySodiumJava;
 import com.goterl.lazysodium.Sodium;
 import com.goterl.lazysodium.SodiumJava;
 import com.sun.jna.Native;
+
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -8,5 +11,24 @@ public class Main {
 
         Native.register(Sodium.class, "sodium");
         Native.register(SodiumJava.class, "sodium");
+
+        final byte[] publicKey = new byte[32];
+        final byte[] secretKey = new byte[64];
+        new SodiumJava().crypto_sign_keypair(publicKey, secretKey);
+
+        System.out.println(Arrays.toString(publicKey));
+        System.out.println(Arrays.toString(secretKey));
+
+//
+//
+//                com.sun.jna.Native.register(SodiumJava.class, "sodium");
+//        final LazySodiumJava sodium = new LazySodiumJava(new SodiumJava(LibraryLoader.Mode.SYSTEM_ONLY));
+//
+//        final byte[] publicKey = new byte[32];
+//        final byte[] secretKey = new byte[64];
+//        sodium.cryptoSignKeypair(publicKey, secretKey);
+//
+//        System.out.println(Arrays.toString(publicKey));
+//        System.out.println(Arrays.toString(secretKey));
     }
 }
