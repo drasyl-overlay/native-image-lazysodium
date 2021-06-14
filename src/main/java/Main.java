@@ -17,7 +17,7 @@ public class Main {
 //        final byte[] secretKey = new byte[64];
 //        new SodiumJava().crypto_sign_keypair(publicKey, secretKey);
 
-        final LazySodiumJava sodium = new LazySodiumJava(new SodiumJava(LibraryLoader.Mode.SYSTEM_ONLY));
+        final LazySodiumJava sodium = new LazySodiumJava(new SodiumJava());
 
         final byte[] publicKey = new byte[32];
         final byte[] secretKey = new byte[64];
