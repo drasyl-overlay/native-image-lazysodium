@@ -1,4 +1,4 @@
-/*
+package org.drasyl.example;/*
  * Copyright (c) 2020-2021 Heiko Bornholdt and Kevin Röbert
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -46,7 +46,7 @@ public class Crypto {
     public static final short SK_CURVE_25519_KEY_LENGTH = Sign.CURVE25519_SECRETKEYBYTES;
 
     static {
-        INSTANCE = getInstance();
+        INSTANCE = new Crypto(new LazySodiumJava(new SodiumJava(LibraryLoader.Mode.BUNDLED_ONLY)));
 
         // check for the optimal cryptographically secure pseudorandom number generator for the current platform
         SecureRandom prng;
@@ -59,17 +59,6 @@ public class Crypto {
         }
 
         CSPRNG = prng;
-    }
-
-    private static Crypto getInstance() {
-        return LazyCryptoHolder.INSTANCE;
-    }
-
-    private static final class LazyCryptoHolder {
-        static final Crypto INSTANCE = new Crypto(
-                new LazySodiumJava(new SodiumJava(LibraryLoader.Mode.BUNDLED_ONLY)));
-
-        private LazyCryptoHolder(){}
     }
 
     private final LazySodiumJava sodium;

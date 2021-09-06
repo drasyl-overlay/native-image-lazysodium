@@ -1,9 +1,11 @@
+package org.drasyl.example;
+
 import com.goterl.lazysodium.interfaces.AEAD;
 import com.goterl.lazysodium.utils.KeyPair;
 import com.goterl.lazysodium.utils.SessionPair;
 import com.sun.jna.Native;
 
-public class Main {
+public class Start {
     public static void main(final String[] args) throws Exception {
         System.out.println("JNA Version: " + Native.VERSION);
 

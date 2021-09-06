@@ -1,6 +1,34 @@
 {
   "resources": {
-    "includes": []
+    "includes": [
+      {
+        "pattern": "\\Qcom/sun/jna/darwin-x86-64/libjnidispatch.jnilib\\E"
+      },
+      {
+        "pattern": "\\Qcom/sun/jna/darwin-aarch64/libjnidispatch.jnilib\\E"
+      },
+      {
+        "pattern": "\\Qcom/sun/jna/linux-x86/libjnidispatch.so\\E"
+      },
+      {
+        "pattern": "\\Qcom/sun/jna/linux-x86-64/libjnidispatch.so\\E"
+      },
+      {
+        "pattern": "\\Qcom/sun/jna/linux-aarch64/libjnidispatch.so\\E"
+      },
+      {
+        "pattern": "\\Qcom/sun/jna/linux-arm/libjnidispatch.so\\E"
+      },
+      {
+        "pattern": "\\Qcom/sun/jna/win32-x86/jnidispatch.dll\\E"
+      },
+      {
+        "pattern": "\\Qcom/sun/jna/win32-x86-64/jnidispatch.dll\\E"
+      },
+      {
+        "pattern": ".*/libsodium.(so|dll|dylib)$"
+      }
+    ]
   },
   "bundles": []
 }

@@ -87,9 +87,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <imageName>main</imageName>
-                    <mainClass>Main</mainClass>
-                    <buildArgs>--no-fallback --allow-incomplete-classpath</buildArgs>
+                    <imageName>native-lazysodium</imageName>
+                    <mainClass>org.drasyl.example.Start</mainClass>
                 </configuration>
             </plugin>
         </plugins>
