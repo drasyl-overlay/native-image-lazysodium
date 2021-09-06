@@ -29,17 +29,6 @@
     </formats>
     <fileSets>
         <fileSet>
-            <directory>../</directory>
-            <outputDirectory>./</outputDirectory>
-            <includes>
-                <include>LICENSE</include>
-            </includes>
-        </fileSet>
-        <fileSet>
-            <directory>./bin/</directory>
-            <outputDirectory>./bin/</outputDirectory>
-        </fileSet>
-        <fileSet>
             <directory>${project.build.directory}</directory>
             <outputDirectory>./lib/</outputDirectory>
             <includes>
