@@ -46,8 +46,7 @@ public class Crypto {
     public static final short SK_CURVE_25519_KEY_LENGTH = Sign.CURVE25519_SECRETKEYBYTES;
 
     static {
-        INSTANCE = new Crypto(
-                new LazySodiumJava(new SodiumJava(LibraryLoader.Mode.BUNDLED_ONLY)));
+        INSTANCE = getInstance();
 
         // check for the optimal cryptographically secure pseudorandom number generator for the current platform
         SecureRandom prng;
@@ -60,6 +59,17 @@ public class Crypto {
         }
 
         CSPRNG = prng;
+    }
+
+    private static Crypto getInstance() {
+        return LazyCryptoHolder.INSTANCE;
+    }
+
+    private static final class LazyCryptoHolder {
+        static final Crypto INSTANCE = new Crypto(
+                new LazySodiumJava(new SodiumJava(LibraryLoader.Mode.BUNDLED_ONLY)));
+
+        private LazyCryptoHolder(){}
     }
 
     private final LazySodiumJava sodium;
