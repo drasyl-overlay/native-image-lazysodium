@@ -89,6 +89,7 @@
                 <configuration>
                     <imageName>main</imageName>
                     <mainClass>Main</mainClass>
+                    <buildArgs>--no-fallback --allow-incomplete-classpath</buildArgs>
                 </configuration>
             </plugin>
         </plugins>
